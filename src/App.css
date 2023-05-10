@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.animate_track {
+    animation-name: example;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes example {
+    0% {
+        transform: translateX(0px);
+    }
+
+    25% {
+        transform: translateX(268px);
+    }
+
+    50% {
+        transform: translateX(0px);
+    }
+
+    75% {
+        transform: translateX(268px);
+    }
+
+    100% {
+        transform: translateX(0px);
+    }
+}
