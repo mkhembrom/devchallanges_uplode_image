@@ -27,7 +27,7 @@ function App() {
       let formdata = new FormData();
       formdata.append("upload", imageFile);
       setIsLoading(true);
-      const { data } = await axios.post(`${import.meta.env?.VITE_BACK_END}/uploads`, formdata, {
+      const { data } = await axios.post('https://mkuploadsapi.onrender.com/api/uploads', formdata, {
         onUploadProgress: (dataValue) => {
           setUploaded(Math.floor((dataValue.loaded / dataValue.total) * 100));
         }
