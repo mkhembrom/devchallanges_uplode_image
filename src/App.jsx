@@ -93,7 +93,7 @@ function App() {
   if (isLoading) {
     return <>
       <div className='w-full min-h-screen bg-indigo-500 flex justify-center items-center'>
-        <div className='rounded-md max-w-[380px] w-full px-4 py-8 flex flex-col items-start justify-center bg-white shadow-xl'>
+        <div className='rounded-md max-w-full md:max-w-[380px] w-full px-4 py-8 flex flex-col items-start justify-center bg-white shadow-xl m-4'>
           <h1 className='text-md text-gray-400 tracking-wide'>Uploading</h1>
 
 
@@ -111,7 +111,7 @@ function App() {
   if (!isLoading && uploaded) {
     return (
       <div className='w-full min-h-screen bg-indigo-500 flex justify-center items-center'>
-        <div className='rounded-md max-w-[380px] w-full px-4 py-8 flex flex-col items-center justify-center bg-white shadow-xl'>
+        <div className='rounded-md max-w-full md:max-w-[380px] w-full px-4 py-8 flex flex-col items-center justify-center bg-white shadow-xl m-4'>
           <h1 className='text-md font-bold tracking-wide'>
             <BsCheckCircleFill size={40} color="#219653" />
           </h1>
@@ -119,13 +119,13 @@ function App() {
 
 
 
-          <div className='border-dashed border-2 border-sky-500 h-52 w-80 rounded-xl my-4 flex flex-col justify-center items-center bg-gray-100 cursor-pointer overflow-hidden'>
+          <div className='border-dashed border-2 border-sky-500 h-52 w-full sm:w-80 rounded-xl my-4 flex flex-col justify-center items-center bg-gray-100 cursor-pointer overflow-hidden'>
             <img className='w-full h-full object-cover ' src={newImageFile} alt="" />
           </div>
 
 
 
-          <div className='p-4 w-full h-10 rounded-full  flex justify-center items-center my-4 relative'>
+          <div className=' sm:p-4 w-full h-10 rounded-full  flex justify-center items-center my-4 relative'>
             <input type="text" value={newImageFile} onChange={e => e.target.value} className='text-xs w-full h-full p-6 bg-gray-200 rounded-lg outline-stone-500' />
             <button onClick={() => handleCopy(newImageFile)} className='bg-blue-500 text-xs px-4 py-2 absolute right-5 top-0 flex justify-center items-center text-white rounded-md h-full'><span className='mr-2'>Copy Link</span><Clipboard
               copied={copied}
@@ -146,7 +146,7 @@ function App() {
 
   return (
     <div className='w-full min-h-screen bg-indigo-500 flex justify-center items-center'>
-      <div className='rounded-md max-w-[380px] w-full px-4 py-8 flex flex-col items-center justify-center bg-white shadow-xl'>
+      <div className='rounded-md max-w-full sm:max-w-[380px] w-full px-4 py-8 flex flex-col items-center justify-center bg-white shadow-xl m-4'>
         <h1 className='text-md font-bold tracking-wide'>Upload your image</h1>
         <h2 className='text-xs tracking-tight my-4'>File should be Jpeg, Png.</h2>
 
@@ -155,12 +155,12 @@ function App() {
           {
 
             image === null ?
-              <label ref={drop} htmlFor="file" draggable className='border-dashed border-2 border-sky-500 h-52 w-80 rounded-xl my-4 flex flex-col justify-center items-center bg-gray-100 cursor-pointer'>
+              <label ref={drop} htmlFor="file" draggable className='border-dashed border-2 border-sky-500 h-52 w-60 sm:w-80 rounded-xl my-4 flex flex-col justify-center items-center bg-gray-100 cursor-pointer'>
                 <img id="myImage" className='object-contain w-40 h-20' src="/image.svg" alt="" />
                 <p className='text-xs mt-8'>Drag & Drop your image here</p>
               </label>
               :
-              <div className='border-dashed border-2 border-sky-500 h-52 w-80 rounded-xl my-4 flex flex-col justify-center items-center bg-gray-100 cursor-pointer overflow-hidden'>
+              <div className='border-dashed border-2 border-sky-500 h-52 w-full sm:w-80 rounded-xl my-4 flex flex-col justify-center items-center bg-gray-100 cursor-pointer overflow-hidden'>
                 <img className='w-full h-full object-cover' src={image} alt="" />
               </div>
 
